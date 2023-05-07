@@ -1,0 +1,31 @@
+--Create a grocery store database.
+
+CREATE TABLE mystore (id INTEGER PRIMARY KEY, name TEXT, price INTEGER, aisle INTEGER, coupon TEXT); 
+
+INSERT INTO mystore VALUES (1, "Apples", 2.77, 7, "yes");
+INSERT INTO mystore Values (2, "peanut butter", 7.22, 19, "no");
+Insert into mystore Values (3, "lipgloss", 14.08, 3, "no");
+Insert into mystore values (4, "cheese", 6.23, 6, "yes");
+Insert into mystore values ( 5, "salami", 11.22, 6, "no");
+Insert into mystore values (6, "tupperware", 8.99, 5, "yes");
+Insert into mystore values (7, "catfood", 12.99, 13, "yes");
+Insert into mystore values (8, "dogfood", 14.99, 13, "yes");
+Insert into mystore values (9, "bread", 2.50, 4, "no");
+Insert into mystore values (10, "milk", 6.67, 8, "yes");
+Insert into mystore values (11, "ice cream", 4.89, 2, "yes");
+Insert into mystore values( 12, "rubber bands", .99, 4, "no");
+Insert into mystore values (13, "pencil", 2.09, 4, "no");
+Insert into mystore values (14, "bell pepper", 2.08, 2, "yes");
+Insert into mystore values (15, "crackers",3.80, 12, "no");
+
+--display the database in order of price.
+
+SELECT * FROM mystore ORDER BY price;
+
+--display sum of all items in mystore.
+
+SELECT SUM(price) FROM mystore
+
+
+
+
