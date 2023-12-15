@@ -1,0 +1,38 @@
+SELECT *
+FROM fortune_companies;
+
+# Show the companies with number of employees greater than 5000
+
+SELECT company_name, employees AS number_of_employees
+FROM fortune_companies
+GROUP BY employees
+HAVING employees > 5000;
+
+
+# Show relationship between companies' amount of maternity leave weeks and their average employee rentention
+
+SELECT company_name, maternity_leave_weeks, avg_employee_tenure
+FROM fortune_companies
+WHERE maternity_leave_weeks >8 AND avg_employee_tenure >5;
+
+# Which company has the maximum revenue
+
+SELECT company_name, MAX(revenue)
+FROM fortune_companies;
+
+# What is the total revenue from Technology companies
+
+SELECT industry, SUM(revenue)AS total_revenue
+FROM fortune_companies
+WHERE industry = "Technology";
+
+#Label all fortune 500 companies as Large, Medium, or Small in respect to each other
+
+SELECT company_name,
+CASE 
+WHEN employees >=1000000 THEN 'Large Company'
+WHEN employees >=100000 THEN 'Medium Company'
+WHEN employees >=1000 THEN 'Small Company'
+ELSE 'The_company_is_quite_small'
+END AS 'Company_Size'
+FROM fortune_companies;
